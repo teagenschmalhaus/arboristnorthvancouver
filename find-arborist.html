@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Qualified Arborist | North Vancouver Tree Care Assessment</title>
+    <meta name="description" content="Answer a few questions about your tree concern and get matched with qualified, insured arborists in North Vancouver. Free assessment tool.">
+    <meta property="og:title" content="Find a Qualified Arborist in North Vancouver">
+    <meta property="og:description" content="Free tree assessment tool. Get matched with qualified local arborists.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2C16 2 12 6 12 10C12 12.2091 13.7909 14 16 14C18.2091 14 20 12.2091 20 10C20 6 16 2 16 2Z" fill="currentColor"/>
+                        <path d="M22 8C22 8 20 10 20 12C20 13.1046 20.8954 14 22 14C23.1046 14 24 13.1046 24 12C24 10 22 8 22 8Z" fill="currentColor"/>
+                        <path d="M10 8C10 8 8 10 8 12C8 13.1046 8.89543 14 10 14C11.1046 14 12 13.1046 12 12C12 10 10 8 10 8Z" fill="currentColor"/>
+                        <rect x="15" y="14" width="2" height="16" fill="currentColor"/>
+                    </svg>
+                    <span>Arborist North Vancouver</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html">Home</a>
+                    <a href="find-arborist.html" class="active">Find an Arborist</a>
+                    <a href="tree-removal.html">Removal</a>
+                    <a href="tree-pruning.html">Pruning</a>
+                    <a href="emergency-tree.html">Emergency</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="assessment-page">
+        <section class="page-header">
+            <div class="container">
+                <h1>Tree Care Assessment</h1>
+                <p class="page-subtitle">Answer a few questions to understand your situation and get matched with qualified local arborists.</p>
+            </div>
+        </section>
+
+        <section class="assessment-form">
+            <div class="container">
+                <div class="form-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="step-indicator">
+                        <span class="current-step">Step <span id="currentStep">1</span></span>
+                        <span class="total-steps">of 5</span>
+                    </div>
+
+                    <form id="assessmentForm" action="#" method="POST">
+                        <!-- Step 1: Tree Concern Type -->
+                        <div class="form-step active" data-step="1">
+                            <h2>What's your main concern?</h2>
+                            <p class="step-description">Select the option that best describes your tree situation.</p>
+                            <div class="options-grid">
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="removal" required>
+                                    <div class="option-content">
+                                        <div class="option-icon">🪓</div>
+                                        <h3>Tree Removal</h3>
+                                        <p>Tree needs to come down completely</p>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="pruning">
+                                    <div class="option-content">
+                                        <div class="option-icon">✂️</div>
+                                        <h3>Pruning / Trimming</h3>
+                                        <p>Branches need cutting back</p>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="health">
+                                    <div class="option-content">
+                                        <div class="option-icon">🏥</div>
+                                        <h3>Tree Health Issue</h3>
+                                        <p>Disease, pests, or declining health</p>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="emergency">
+                                    <div class="option-content">
+                                        <div class="option-icon">⚡</div>
+                                        <h3>Emergency / Storm Damage</h3>
+                                        <p>Immediate risk or recent damage</p>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="assessment">
+                                    <div class="option-content">
+                                        <div class="option-icon">📋</div>
+                                        <h3>Risk Assessment</h3>
+                                        <p>Not sure, need professional evaluation</p>
+                                    </div>
+                                </label>
+                                <label class="option-card">
+                                    <input type="radio" name="concern_type" value="planting">
+                                    <div class="option-content">
+                                        <div class="option-icon">🌱</div>
+                                        <h3>Planting / Care Advice</h3>
+                                        <p>New tree or ongoing maintenance</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-next" onclick="nextStep()">Continue</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Risk Level -->
+                        <div class="form-step" data-step="2">
+                            <h2>What's the urgency level?</h2>
+                            <p class="step-description">Help us understand how quickly you need assistance.</p>
+                            <div class="options-list">
+                                <label class="option-card-horizontal">
+                                    <input type="radio" name="urgency" value="emergency" required>
+                                    <div class="option-content">
+                                        <div class="urgency-badge emergency">Emergency</div>
+                                        <h3>Immediate Risk</h3>
+                                        <p>Tree has fallen, major branch broken, blocking road/driveway, or posing imminent danger to people or property.</p>
+                                    </div>
+                                </label>
+                                <label class="option-card-horizontal">
+                                    <input type="radio" name="urgency" value="urgent">
+                                    <div class="option-content">
+                                        <div class="urgency-badge urgent">Urgent</div>
+                                        <h3>Within 1-2 Weeks</h3>
+                                        <p>Tree is leaning severely, large dead branches over structures, or signs of serious instability.</p>
+                                    </div>
+                                </label>
+                                <label class="option-card-horizontal">
+                                    <input type="radio" name="urgency" value="soon">
+                                    <div class="option-content">
+                                        <div class="urgency-badge soon">Soon</div>
+                                        <h3>Within 1-2 Months</h3>
+                                        <p>Need work done before next storm season, minor lean, or preventative maintenance needed.</p>
+                                    </div>
+                                </label>
+                                <label class="option-card-horizontal">
+                                    <input type="radio" name="urgency" value="planning">
+                                    <div class="option-content">
+                                        <div class="urgency-badge planning">Planning</div>
+                                        <h3>Just Planning Ahead</h3>
+                                        <p>Getting quotes, learning about options, or scheduling work for later in the year.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+                                <button type="button" class="btn-next" onclick="nextStep()">Continue</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Property Details -->
+                        <div class="form-step" data-step="3">
+                            <h2>Tell us about your property</h2>
+                            <p class="step-description">This helps us match you with arborists experienced in similar situations.</p>
+                            <div class="form-fields">
+                                <div class="form-group">
+                                    <label for="tree_size">Approximate Tree Height</label>
+                                    <select id="tree_size" name="tree_size" required>
+                                        <option value="">Select height...</option>
+                                        <option value="small">Small (under 20 feet / 6 meters)</option>
+                                        <option value="medium">Medium (20-40 feet / 6-12 meters)</option>
+                                        <option value="large">Large (40-60 feet / 12-18 meters)</option>
+                                        <option value="very-large">Very Large (over 60 feet / 18+ meters)</option>
+                                        <option value="unknown">Not sure</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tree_type">Tree Type (if known)</label>
+                                    <input type="text" id="tree_type" name="tree_type" placeholder="e.g., Douglas Fir, Cedar, Maple, Oak">
+                                    <small>Leave blank if unsure - an arborist can identify it</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location_context">Where is the tree located?</label>
+                                    <select id="location_context" name="location_context" required>
+                                        <option value="">Select location...</option>
+                                        <option value="front-yard">Front yard</option>
+                                        <option value="back-yard">Back yard</option>
+                                        <option value="side-yard">Side yard</option>
+                                        <option value="property-line">On or near property line</option>
+                                        <option value="boulevard">Boulevard (city property)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Access Challenges? (select all that apply)</label>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" name="access_challenges" value="narrow-access">
+                                            Narrow side yard or gate access only
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="access_challenges" value="overhead-lines">
+                                            Near overhead power lines
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="access_challenges" value="structures">
+                                            Close to house, garage, or shed
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="access_challenges" value="steep-slope">
+                                            On steep slope or hillside
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="access_challenges" value="none">
+                                            No access challenges
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additional_details">Additional Details</label>
+                                    <textarea id="additional_details" name="additional_details" rows="4" placeholder="Any other important information about your tree or property..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+                                <button type="button" class="btn-next" onclick="nextStep()">Continue</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Photo Upload -->
+                        <div class="form-step" data-step="4">
+                            <h2>Add photos (optional but helpful)</h2>
+                            <p class="step-description">Photos help arborists give you more accurate guidance and quotes. Include photos showing the full tree and any problem areas.</p>
+                            <div class="upload-area">
+                                <div class="upload-box" id="uploadBox">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 16V32M16 24H32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                                        <rect x="4" y="4" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    <p><strong>Click to upload</strong> or drag and drop</p>
+                                    <p class="upload-note">PNG, JPG up to 10MB each • Max 5 photos</p>
+                                    <input type="file" id="photoUpload" name="photos[]" multiple accept="image/png,image/jpeg" style="display: none;">
+                                </div>
+                                <div id="photoPreview" class="photo-preview"></div>
+                            </div>
+                            <div class="photo-tips">
+                                <h3>Photo Tips:</h3>
+                                <ul>
+                                    <li>Include a full view of the tree from ground level</li>
+                                    <li>Take close-ups of problem areas (dead branches, damage, lean)</li>
+                                    <li>Show the tree's relationship to structures (house, garage, etc.)</li>
+                                    <li>Include multiple angles if possible</li>
+                                </ul>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+                                <button type="button" class="btn-next" onclick="nextStep()">Continue</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Contact Information -->
+                        <div class="form-step" data-step="5">
+                            <h2>How can arborists reach you?</h2>
+                            <p class="step-description">We'll share your information with qualified, insured arborists in North Vancouver.</p>
+                            <div class="form-fields">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" id="first_name" name="first_name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email_address">Email Address</label>
+                                    <input type="email" id="email_address" name="email_address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone_number">Phone Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" required>
+                                    <small>Preferred for urgent situations</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="property_address">Property Address</label>
+                                    <input type="text" id="property_address" name="property_address" placeholder="Street address" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city" value="North Vancouver" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postal_code">Postal Code</label>
+                                        <input type="text" id="postal_code" name="postal_code" placeholder="V7M 1A1" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferred_contact">Preferred Contact Method</label>
+                                    <select id="preferred_contact" name="preferred_contact" required>
+                                        <option value="">Select preference...</option>
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone Call</option>
+                                        <option value="text">Text Message</option>
+                                        <option value="any">Any method</option>
+                                    </select>
+                                </div>
+                                <div class="form-group checkbox-single">
+                                    <label>
+                                        <input type="checkbox" name="consent" required>
+                                        I understand my information will be shared with qualified, insured arborists for the purpose of receiving quotes and guidance. I can request removal of my information at any time.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+                                <button type="submit" class="btn-submit">Submit Assessment</button>
+                            </div>
+                            <p class="privacy-note">Your privacy is important to us. We only share your information with licensed, insured arborists. See our <a href="contact.html">privacy policy</a>.</p>
+                        </div>
+                    </form>
+
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <span>✓</span> Licensed Arborists Only
+                        </div>
+                        <div class="badge">
+                            <span>✓</span> Fully Insured Professionals
+                        </div>
+                        <div class="badge">
+                            <span>✓</span> No Obligation Quotes
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Site</h4>
+                    <p>ArboristNorthVancouver.com is an independent educational resource helping homeowners make informed decisions about tree care. We are not a tree service company.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="tree-removal.html">Tree Removal Guide</a></li>
+                        <li><a href="tree-pruning.html">Pruning Guide</a></li>
+                        <li><a href="emergency-tree.html">Emergency Services</a></li>
+                        <li><a href="pricing.html">Pricing Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li>North Vancouver, BC</li>
+                        <li>West Vancouver, BC</li>
+                        <li>Vancouver, BC</li>
+                        <li>Sea to Sky Corridor</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Arborist North Vancouver. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentStepNum = 1;
+        const totalSteps = 5;
+
+        function nextStep() {
+            const currentStep = document.querySelector(`.form-step[data-step="${currentStepNum}"]`);
+            const inputs = currentStep.querySelectorAll('input[required], select[required], textarea[required]');
+            let valid = true;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    valid = false;
+                    input.reportValidity();
+                }
+            });
+
+            if (valid && currentStepNum < totalSteps) {
+                currentStep.classList.remove('active');
+                currentStepNum++;
+                document.querySelector(`.form-step[data-step="${currentStepNum}"]`).classList.add('active');
+                updateProgress();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep() {
+            if (currentStepNum > 1) {
+                document.querySelector(`.form-step[data-step="${currentStepNum}"]`).classList.remove('active');
+                currentStepNum--;
+                document.querySelector(`.form-step[data-step="${currentStepNum}"]`).classList.add('active');
+                updateProgress();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentStepNum / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('currentStep').textContent = currentStepNum;
+        }
+
+        // Photo upload handling
+        const uploadBox = document.getElementById('uploadBox');
+        const photoUpload = document.getElementById('photoUpload');
+        const photoPreview = document.getElementById('photoPreview');
+
+        uploadBox.addEventListener('click', () => photoUpload.click());
+
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.style.borderColor = '#2d5016';
+        });
+
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.style.borderColor = '#d4d4d4';
+        });
+
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.style.borderColor = '#d4d4d4';
+            handleFiles(e.dataTransfer.files);
+        });
+
+        photoUpload.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        function handleFiles(files) {
+            photoPreview.innerHTML = '';
+            Array.from(files).slice(0, 5).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        photoPreview.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Form submission
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your submission! We\'ll connect you with qualified arborists shortly.');
+        });
+
+        // Initialize progress
+        updateProgress();
+    </script>
+</body>
+</html>
