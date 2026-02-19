@@ -644,6 +644,53 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+/* Jurisdiction Tabs */
+.jurisdiction-tabs {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.jurisdiction-tab {
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid var(--primary-navy);
+    color: var(--primary-navy);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.jurisdiction-tab:hover {
+    background-color: var(--primary-navy);
+    color: var(--white);
+}
+
+.jurisdiction-section {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.jurisdiction-section:last-child {
+    border-bottom: none;
+}
+
+.jurisdiction-label {
+    display: inline-block;
+    background-color: var(--primary-navy);
+    color: var(--white);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.375rem 1rem;
+    border-radius: 30px;
+    margin-bottom: var(--spacing-lg);
+}
+
 /* Permit Detail Page */
 .permit-detail-list {
     display: flex;
