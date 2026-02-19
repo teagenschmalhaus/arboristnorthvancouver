@@ -644,6 +644,51 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+/* Permit Detail Page */
+.permit-detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
+}
+
+.permit-detail-item {
+    background-color: var(--gray-50);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-green);
+}
+
+.permit-detail-item h3 {
+    font-size: 1rem;
+    color: var(--primary-navy);
+    margin-bottom: var(--spacing-xs);
+}
+
+.permit-detail-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0 var(--spacing-xl);
+}
+
+.species-card {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    font-weight: 600;
+    color: var(--primary-navy);
+    text-align: center;
+    font-size: 0.9375rem;
+}
+
 /* Permit Section */
 .permit-section {
     background-color: var(--gray-50);
