@@ -51,7 +51,7 @@
                 <div class="contact-grid">
                     <div class="contact-form-wrapper">
                         <h2>Send Us a Message</h2>
-                        <form class="contact-form" action="#" method="POST">
+                        <form class="contact-form" action="https://formspree.io/arboristnorthvancouver@gmail.com" method="POST">
                             <div class="form-group">
                                 <label for="contact-name">Name</label>
                                 <input type="text" id="contact-name" name="name" required>
@@ -79,6 +79,10 @@
                     </div>
 
                     <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p><strong>Phone:</strong> <a href="tel:7782009610">778-200-9610</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:arboristnorthvancouver@gmail.com">arboristnorthvancouver@gmail.com</a></p>
+
                         <h2>For Homeowners</h2>
                         <p>Have a tree concern? The fastest way to get help is through our <a href="find-arborist.html">assessment tool</a>. You'll receive guidance specific to your situation and connect with qualified arborists if needed.</p>
                         
@@ -129,6 +133,8 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
+                        <li><a href="tel:7782009610">778-200-9610</a></li>
+                        <li><a href="mailto:arboristnorthvancouver@gmail.com">arboristnorthvancouver@gmail.com</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="about.html">About Us</a></li>
                     </ul>
@@ -146,10 +152,6 @@
             this.classList.toggle('active');
         });
         
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message. We will respond within 24-48 hours.');
-        });
     </script>
 </body>
 </html>

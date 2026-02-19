@@ -189,6 +189,25 @@ li {
     padding: var(--spacing-md) 0;
 }
 
+.header-phone {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    display: none;
+}
+
+.header-phone:hover {
+    color: var(--accent-gold);
+}
+
+@media (min-width: 1024px) {
+    .header-phone {
+        display: block;
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
