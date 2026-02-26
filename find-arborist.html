@@ -62,7 +62,10 @@
                         <span class="total-steps">of 5</span>
                     </div>
 
-                    <form id="assessmentForm" action="#" method="POST">
+                    <form id="assessmentForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="19143c44-91e3-4c43-ab15-959b79318413">
+                        <input type="hidden" name="subject" value="New Tree Assessment - Arborist North Vancouver">
+                        <input type="hidden" name="redirect" value="https://arboristnorthvancouver.pages.dev/contact.html">
                         <!-- Step 1: Tree Concern Type -->
                         <div class="form-step active" data-step="1">
                             <h2>What's your main concern?</h2>
@@ -469,12 +472,6 @@
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
             document.querySelector('.main-nav').classList.toggle('active');
             this.classList.toggle('active');
-        });
-
-        // Form submission
-        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your submission! We\'ll connect you with qualified arborists shortly.');
         });
 
         // Initialize progress
