@@ -263,7 +263,8 @@ li {
     }
 
     .mobile-menu-toggle {
-        display: none;
+        visibility: hidden;
+        pointer-events: none;
     }
 }
 
