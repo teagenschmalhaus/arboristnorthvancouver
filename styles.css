@@ -232,7 +232,7 @@ li {
 .main-nav a {
     color: var(--white);
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: var(--spacing-xs) 0;
