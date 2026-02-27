@@ -246,16 +246,6 @@ li {
     border-bottom-color: var(--accent-gold);
 }
 
-@media (min-width: 1024px) {
-    .main-nav {
-        display: flex;
-    }
-    
-    .mobile-menu-toggle {
-        display: none;
-    }
-}
-
 /* Mobile Menu */
 .mobile-menu-toggle {
     display: flex;
@@ -265,6 +255,16 @@ li {
     border: none;
     cursor: pointer;
     padding: var(--spacing-xs);
+}
+
+@media (min-width: 1024px) {
+    .main-nav {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
 }
 
 .mobile-menu-toggle span {
