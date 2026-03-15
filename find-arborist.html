@@ -194,31 +194,33 @@
                             <p class="step-description">This helps us match you with arborists experienced in similar situations.</p>
                             <div class="form-fields">
                                 <div class="form-group">
-                                    <label for="tree_size">Approximate Tree Height</label>
-                                    <select id="tree_size" name="tree_size" required>
-                                        <option value="">Select height...</option>
-                                        <option value="small">Small (under 20 feet / 6 meters)</option>
-                                        <option value="medium">Medium (20-40 feet / 6-12 meters)</option>
-                                        <option value="large">Large (40-60 feet / 12-18 meters)</option>
-                                        <option value="very-large">Very Large (over 60 feet / 18+ meters)</option>
-                                        <option value="unknown">Not sure</option>
-                                    </select>
+                                    <label for="tree_details">Number of Trees &amp; Approximate Height</label>
+                                    <textarea id="tree_details" name="tree_details" rows="3" placeholder="e.g., 2 trees — one is about 30 feet tall, the other around 15 feet"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tree_type">Tree Type (if known)</label>
-                                    <input type="text" id="tree_type" name="tree_type" placeholder="e.g., Douglas Fir, Cedar, Maple, Oak">
-                                    <small>Leave blank if unsure - an arborist can identify it</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="location_context">Where is the tree located?</label>
-                                    <select id="location_context" name="location_context" required>
-                                        <option value="">Select location...</option>
-                                        <option value="front-yard">Front yard</option>
-                                        <option value="back-yard">Back yard</option>
-                                        <option value="side-yard">Side yard</option>
-                                        <option value="property-line">On or near property line</option>
-                                        <option value="boulevard">Boulevard (city property)</option>
-                                    </select>
+                                    <label>Where is the tree located? (select all that apply)</label>
+                                    <div class="checkbox-group">
+                                        <label>
+                                            <input type="checkbox" name="location_context" value="front-yard">
+                                            Front yard
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="location_context" value="back-yard">
+                                            Back yard
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="location_context" value="side-yard">
+                                            Side yard
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="location_context" value="property-line">
+                                            On or near property line
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="location_context" value="boulevard">
+                                            Boulevard (city property)
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Access Challenges? (select all that apply)</label>
